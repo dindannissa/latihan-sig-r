@@ -1,0 +1,24 @@
+---
+title: "latihan"
+author: "Dinda"
+format: html
+editor: visual
+---
+
+```{r, echo=FALSE}
+library(sf)
+library(leaflet)
+```
+
+
+## Peta Jawa Timur 
+
+```{r}
+jatim<-st_read("C:/Users/MyBook Hype/Downloads/Jatim/jatim.shp")
+
+leaflet(jatim) %>%
+  addTiles() %>% 
+  setView(lat = -7.25, lng = 112.76, zoom = 7) %>% 
+  addPolygons(fillColor = "Grey")
+```
+
